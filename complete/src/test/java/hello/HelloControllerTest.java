@@ -24,8 +24,8 @@ public class HelloControllerTest {
 
     @Test
     public void getHello() throws Exception {
-        mvc.perform(MockMvcRequestBuilders.get("/").accept(MediaType.APPLICATION_JSON))
+        mvc.perform(MockMvcRequestBuilders.get("/?key=test").accept(MediaType.APPLICATION_JSON))
                 .andExpect(status().isOk())
-                .andExpect(content().string(equalTo("Diva Spring Boot Sample Greetings on Azure!")));
+                .andExpect(content().string(equalTo("Diva Spring Boot Sample Greetings on Azure for key test")));
     }
 }
